@@ -4,12 +4,10 @@ function solveEquation(a, b, c) {
 	let arr = [];
 	let d = Math.pow(b, 2) - 4 * a * c;
 
-	if (d < 0) {
-		return arr;
-	} else if (d === 0) {
+	if (d === 0) {
 		let root = -b / (2 * a);
 		arr.push(root);
-	} else {
+	} else if (d > 0) {
 		let root1 = (-b + Math.sqrt(d)) / (2 * a);
 		let root2 = (-b - Math.sqrt(d)) / (2 * a);
 		arr.push(root1, root2);
@@ -27,7 +25,5 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
 	let total = monthlyPayment * countMonths;
 
-	let convertingTotalAmount = parseFloat(total.toFixed(2));
-
-	return convertingTotalAmount;
+	return parseFloat(total.toFixed(2));
 }
